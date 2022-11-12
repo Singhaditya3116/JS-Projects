@@ -36,7 +36,7 @@ body{
 
 .quote-author {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   font-weight: normal;
   font-size: 1.5rem;
   margin: 5px 0px;
