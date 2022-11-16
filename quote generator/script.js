@@ -2,10 +2,25 @@
 // Get Quotes From API.
 let apiQuotes = [];
 
+const quoteContainer = document.getElementById("quote-container")
 const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("author");
 const newQuoteBtn = document.getElementById("new-quote");
 const twitterBtn = document.getElementById("twitter-button");
+const loader = document.getElementById("loader");
+
+//show loading
+function loading(){
+  quoteContainer.hidden=true;
+  loader.hidden=false;
+}
+loading()
+
+//show quotes
+function complete(){
+  quoteContainer.hidden=false;
+  loader.hidden=true;
+}
 
 //Get Quotes from API and append in array.
 async function getQuotes()
@@ -24,6 +39,7 @@ getQuotes();
 
 // Get random Quotes from array and display it in UI.
 function newQuotes(){
+  loading();
   let randomNumber = Math.floor(Math.random()*apiQuotes.length);
   
   //If author name is NULL,Keep the author name as Unknown
@@ -46,6 +62,7 @@ function newQuotes(){
     quoteText.classList.remove("long-quote");
   }
   quoteText.textContent = apiQuotes[randomNumber].text;
+  complete();
 }
 
 //Tweet Quote.
