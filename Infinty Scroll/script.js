@@ -1,5 +1,5 @@
 // Unsplash API
-const count=2;
+const count=6;
 const apiKey = "wEJawa1hK7wHScECo1eR9S6Ao5GbcLtEt5nYPGXHVf8";
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
@@ -7,7 +7,6 @@ const imageContainer = document.getElementById("image-container");
 let photosArray = [];
 
 //Get photos from Unsplash API
-
 async function getPhotos(){
 
   try{
@@ -52,5 +51,31 @@ function displayPhotos(){
   //imageContainer.innerHTML = result;
   
 }
-
 getPhotos();
+
+var prevOffsetHeight = 0;
+var currOffsetHeight=0;
+var isLoad = false;
+
+window.addEventListener("scroll",()=>{
+  //console.log("Scrolled");
+
+  if(window.scrollY > (document.body.offsetHeight - window.innerHeight - 100))
+  {
+    currOffsetHeight = (document.body.offsetHeight - window.innerHeight - 100);
+
+    if(isLoad && (prevOffsetHeight != currOffsetHeight)) // if offsite height has changed then load when we reach bottom
+    {
+      isLoad=false;
+    }
+
+    if(!isLoad)  //Scroll has reached bottom and we need to load photos
+    {
+      getPhotos();
+      console.log("Load more");
+      prevOffsetHeight = currOffsetHeight;
+      isLoad = true;
+    }
+  }
+})
+
