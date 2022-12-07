@@ -65,6 +65,7 @@ body {
 .progress-container{
   width:100%;
   height: 40px;
+  
 }
 
 .duration-wrapper{
@@ -79,10 +80,12 @@ body {
   background-color: white;
   margin: auto;
   border-radius: 5px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #progress{
-  width:60%;
+  width:0%;
   height:100%;
   background-color:black;
   border-radius: 5px;
@@ -93,7 +96,10 @@ body {
   width:100%;
   text-align: center;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
+
+
 
 .bx{
   font-size: 40px;
