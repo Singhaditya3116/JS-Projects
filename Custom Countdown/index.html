@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Countdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Video background -->
+    <video class="video-background" autoplay loop muted>
+        <source src="./time.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <div class="container">
+        <h1>Create a Custom Countdown!</h1>
+
+        <form method="">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" placeholder="What are you counting down to?" id="title">
+            </div>
+            <div>
+                <label for="date">Select a Date</label>
+                <input type="date" id="date">
+            </div>
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
