@@ -20,21 +20,51 @@
     <div class="video-overlay"></div>
 
     <div class="container">
-        <h1>Create a Custom Countdown!</h1>
+        <!-- Create Countdown -->
+        <div hidden>
+            <h1>Create a Custom Countdown!</h1>
 
-        <form method="">
-            <div>
-                <label for="title">Title</label>
-                <input type="text" placeholder="What are you counting down to?" id="title">
-            </div>
-            <div>
-                <label for="date">Select a Date</label>
-                <input type="date" id="date">
-            </div>
+            <form method="">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" placeholder="What are you counting down to?" id="title">
+                </div>
+                <div>
+                    <label for="date">Select a Date</label>
+                    <input type="date" id="date">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
 
+        <!-- Timer CountDown -->
+        <div class="countdown" id="countdown" hidden>
+            <h1 id="countdown-title" class="countdown-title">CountDown name</h1>
 
-            <button type="submit">Submit</button>
-        </form>
+            <table>
+                <tr>
+                    <th>1</th>
+                    <th>10</th>
+                    <th>15</th>
+                    <th>49</th>
+                </tr>
+                <tr>
+                    <td>Days</td>
+                    <td>Hours</td>
+                    <td>Minutes</td>
+                    <td>Seconds</td>
+                </tr>
+            </table>
+            <button id="reset-button">Reset</button>
+        </div>
+
+        <!-- CountDown Finished -->
+        <div class="countdown-complete" id="countdown-complete">
+            <h1 id="countdown-complete-title" class="countdown-title">CountDown Complete!</h1>
+
+            <div id="countdown-complete-text"><span>CountDown Name</span> finished on <span>06-12-2022</span></div>
+            <button id="new-count-button">New CountDown</button>
+        </div>
     </div>
 
     <!-- Script -->
