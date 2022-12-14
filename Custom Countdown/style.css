@@ -59,6 +59,7 @@ input{
   width:90%;
   height:2rem;
   padding-left: 2%;
+  padding-right: 2%;
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
 }
@@ -120,6 +121,37 @@ table{
 #countdown-complete-text{
   font-size: 24px;
   font-weight: bold;
+}
+
+#countdown-complete-title{
+  -webkit-animation-name: Disco;
+          animation-name: Disco;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+
+@-webkit-keyframes Disco{
+  from{
+    color: cyan;
+  }
+  to{
+    color:orange;
+    transform: scale(1.2);
+  }
+}
+
+
+@keyframes Disco{
+  from{
+    color: cyan;
+  }
+  to{
+    color:orange;
+    transform: scale(1.2);
+  }
 }
 
 @media screen and (max-width:1500px){
@@ -211,6 +243,10 @@ table{
   
   #reset-button,#new-count-button{
     margin: 11% 0% 0% 5%;
+  }
+
+  #countdown-complete-text{
+    font-size: 15px;
   }
 }
 

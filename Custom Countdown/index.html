@@ -21,10 +21,10 @@
 
     <div class="container">
         <!-- Create Countdown -->
-        <div hidden>
+        <div class="input-container" id="input-container">
             <h1>Create a Custom Countdown!</h1>
 
-            <form method="">
+            <form method="" id="countdown-form">
                 <div>
                     <label for="title">Title</label>
                     <input type="text" placeholder="What are you counting down to?" id="title">
@@ -59,7 +59,7 @@
         </div>
 
         <!-- CountDown Finished -->
-        <div class="countdown-complete" id="countdown-complete">
+        <div class="countdown-complete" id="countdown-complete" hidden>
             <h1 id="countdown-complete-title" class="countdown-title">CountDown Complete!</h1>
 
             <div id="countdown-complete-text"><span>CountDown Name</span> finished on <span>06-12-2022</span></div>
