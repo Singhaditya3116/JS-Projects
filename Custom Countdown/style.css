@@ -118,6 +118,7 @@ table{
   height: 2.5rem;
 }
 
+
 #countdown-complete-text{
   font-size: 24px;
   font-weight: bold;
@@ -173,6 +174,10 @@ table{
     width: 90%;
     height: 2rem;
   }
+
+  #countdown-complete-text{
+    margin: 6% 0% 0% 5%;
+  } 
 }
 
 @media screen and (max-width:600px){
@@ -211,6 +216,7 @@ table{
 
   #countdown-complete-text{
     font-size: 18px;
+    margin: 8% 0% 0% 5%;
   }
 }
 
