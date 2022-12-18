@@ -1,0 +1,142 @@
+body{
+  background-color: #cbc6d4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23070707' fill-opacity='0.08'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  margin: 0px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  width:100%;
+  height: 100vh;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 0% 0% 0%;
+}
+
+#add-bookmark-btn{
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+  border: 0px;
+  cursor: pointer;
+  padding: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+}
+
+.modal{
+  width:500px;
+  height:280px;
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 10px 40px 2px rgba(0,0,0,0.5);
+}
+
+.modal-header{
+  width: 93%;
+  height: 17%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3% 2% 0% 5%;
+  background-color: #cbc6d4;
+}
+
+#modal-title{
+  margin: 0px;
+}
+
+.modal-header button{
+  height:21px;
+  width:30px;
+  background-color: #cbc6d4;
+  border: 0px;
+  cursor: pointer;
+}
+
+#cross-icon{
+  height: 100%;
+  width: 100%;
+  
+}
+
+.modal-body{
+  height: 70%;
+  width:95%;
+  padding: 5% 0% 0% 5%;
+}
+
+form div{
+  margin-bottom: 1%;
+}
+
+label,input{
+  display: block;
+}
+
+input{
+  width: 85%;
+  height: 25px;
+  border: 2px solid #cbc6d4;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  padding-left: 1%;
+}
+
+input:focus{
+
+  outline-width: 0;
+}
+
+form button{
+  background-color: #cbc6d4;
+  border: 0px;
+  width: 20%;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 3%;
+}
+
+.bookmarks-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px 5% 0% 10%;
+}
+
+.bookmark-items {
+  background-color: rgba(0,0,0,0.3);
+  height: 50px;
+  width: 150px;
+  margin: 13px;
+  padding: 18px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.bookmark-items a {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  top: 38%;
+  left: 12%;
+}
+
+#bookmark-delete-icon{
+  height: 12px;
+  width: 15px;
+  position: absolute;
+  right: 7%;
+  top: 12%;
+  color: white;
+  cursor: pointer;
+}
