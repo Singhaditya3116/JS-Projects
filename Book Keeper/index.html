@@ -15,52 +15,50 @@
   <div class="container">
     <div class="title">
       <button id="add-bookmark-btn">ADD BOOKMARK</button>
-
-      <div class="modal" hidden>
-        <div class="modal-header">
-          <h2 id="modal-title">Add Bookmark</h2>
-          <button> <img id="cross-icon" src="https://cdn-icons-png.flaticon.com/512/57/57165.png"> </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div>
-              <label for="web-name">Website Name</label>
-              <input type="text" id="web-name">
-            </div>
-            <div>
-              <label for="web-url">Website URL</label>
-              <input type="text" id="web-url">
-            </div>
-            <button type="submit">Save</button>
-          </form>
-        </div>
-
-      </div>
-
     </div>
 
     <div class="bookmarks-container">
       <div class="bookmark-items">
-        <a href="./hello">Website Name
+        <a href="https://google.com" target="_blank">Website Name
         </a>
-        <img id="bookmark-delete-icon"
+        <img id="bookmark-delete-icon" title="Delete Bookmark"
           src="https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Cross_icon_%28white%29.svg/800px-Cross_icon_%28white%29.svg.png">
       </div>
 
       <div class="bookmark-items">
-        <a href="./hello">Website Name
+        <a href="https://google.com" target="_blank">Website Name
         </a>
-        <img id="bookmark-delete-icon"
+        <img id="bookmark-delete-icon" title="Delete Bookmark"
           src="https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Cross_icon_%28white%29.svg/800px-Cross_icon_%28white%29.svg.png">
       </div>
       <div class="bookmark-items">
-        <a href="./hello">Website Name
+        <a href="https://google.com" target="_blank">Website Name
         </a>
-        <img id="bookmark-delete-icon"
+        <img id="bookmark-delete-icon" title="Delete Bookmark"
           src="https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Cross_icon_%28white%29.svg/800px-Cross_icon_%28white%29.svg.png">
       </div>
+    </div>
 
-
+    <!-- Modal -->
+    <div class="modal" hidden>
+      <div class="modal-header">
+        <h2 id="modal-title">Add Bookmark</h2>
+        <button id="close-modal"> <img id="cross-icon" src="https://cdn-icons-png.flaticon.com/512/57/57165.png">
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="bookmark-form">
+          <div>
+            <label for="web-name">Website Name</label>
+            <input type="text" id="web-name">
+          </div>
+          <div>
+            <label for="web-url">Website URL</label>
+            <input type="text" id="web-url">
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
     </div>
 
   </div>
