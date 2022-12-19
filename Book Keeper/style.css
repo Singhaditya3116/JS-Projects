@@ -85,6 +85,10 @@ form div{
   margin-bottom: 1%;
 }
 
+label{
+  color:#6745aa;
+}
+
 label,input{
   display: block;
 }
@@ -147,4 +151,12 @@ form button{
   top: 12%;
   color: white;
   cursor: pointer;
+}
+
+/* Media Query */
+@media screen and (max-width:500px)
+{
+  .bookmark-items {
+    width: 75%;
+  }
 }
