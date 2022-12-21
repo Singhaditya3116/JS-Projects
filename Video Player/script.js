@@ -41,39 +41,41 @@ function videoPlayPause()
 
 
 // Progress Bar ---------------------------------- //
-function getMinutes(timeInSec)
+function getTime(timeInSec)
 {
   let minutes = Math.floor(timeInSec/60);
   if(minutes < 10)
   {
     minutes = `0${minutes}`
   }
-  return minutes;
-}
-
-function getSeconds(timeInSec)
-{
   let seconds = Math.floor(timeInSec%60);
-  if(seconds < 9 )
+  if(seconds < 10)
   {
     seconds = `0${seconds}`;
   }
-  return seconds;
+  return `${minutes}:${seconds}`;
 }
 
+//Update Progress Bar as video Plays
 function updateProgressBar()
 {
   progressBar.style.width=`${(videoEl.currentTime/videoEl.duration)*100}%`;
 
-  let currentMinutes = getMinutes(videoEl.currentTime);
-  let currentSeconds = getSeconds(videoEl.currentTime);
-  timeElapsed.textContent = `${currentMinutes}:${currentSeconds} /`
-  console.log(currentMinutes,currentSeconds);
+  let currentTime = getTime(videoEl.currentTime);
+  let durationTime = getTime(videoEl.duration);
+  timeElapsed.textContent = `${currentTime} /`;
+  timeDuration.textContent = `${durationTime}`;
 }
 
-function changeProgressBarWidth(e)
+//Seek Progress Bar when clicked on progress Range.
+function setProgress(e)
 {
-  console.log(e.clientX);
+  let widthPercentage = (e.offsetX/progressRange.offsetWidth)*100;
+  progressBar.style.width = `${widthPercentage}%`;
+  let timeElapsed = (widthPercentage*videoEl.duration)/100;
+  videoEl.currentTime=timeElapsed;
+  timeElapsed = getTime(timeElapsed);
+  timeElapsed.textContent = `${timeElapsed} /`;
 }
 
 // Volume Controls --------------------------- //
@@ -94,4 +96,4 @@ videoEl.addEventListener("click",videoPlayPause);
 videoEl.addEventListener("ended",pauseVideo);
 videoEl.addEventListener("canplay",updateProgressBar);
 videoEl.addEventListener("timeupdate",updateProgressBar);
-progressRange.addEventListener("click",changeProgressBarWidth)
+progressRange.addEventListener("click",setProgress)
