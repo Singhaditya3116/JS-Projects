@@ -20,7 +20,7 @@ body {
 
 .player {
   max-width: 80vw;
-  min-width: 800px;
+  min-width: 600px;
   border: 5px solid black;
   border-radius: 10px;
   background: black;
@@ -101,7 +101,7 @@ video {
 
 .progress-bar {
   background: var(--primary-color);
-  width: 50%;
+  width: 0%;
   height: 100%;
   border-radius: 10px;
   transition: all 0.5s ease;
@@ -124,7 +124,7 @@ video {
   color: white;
   font-size: 25px;
 }
-.bx-play{
+.bx-play,.bx-pause{
   font-size: 40px;
 }
 .bx-play:hover,
@@ -237,9 +237,17 @@ select > option {
     min-width: 0px;
     max-width: 95vw;
   }
+
+  .play-controls{
+    margin-top: -2px;
+  }
  
   .bx {
     font-size: 20px;
+  }
+
+  .bx-play,.bx-pause{
+    font-size: 27px;
   }
 
   .controls-container {
@@ -252,14 +260,14 @@ select > option {
   }
 
   .progress-range {
-    width: 100%;
+    width: 96%;
     top: 0;
-    left: 0;
-    border-radius: 0;
+    left: 2%;
+    border-radius: 5px;
   }
 
   .progress-bar {
-    border-radius: 0;
+    border-radius: 5px;
   }
 
   .volume-range {
