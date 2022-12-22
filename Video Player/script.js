@@ -6,7 +6,8 @@ const timeDuration = document.querySelector(".time-duration");
 const timeElapsed = document.querySelector(".time-elapsed");
 const progressRange = document.querySelector(".progress-range");
 const progressBar = document.querySelector(".progress-bar");
-
+const volumeRange = document.querySelector(".volume-range");
+const volumeBar = document.querySelector(".volume-bar");
 
 // Play & Pause ----------------------------------- //
 
@@ -80,6 +81,72 @@ function setProgress(e)
 
 // Volume Controls --------------------------- //
 
+function removeAllVolumeClass()
+{
+  volumeBtn.classList.remove("bxs-volume-full");
+  volumeBtn.classList.remove("bxs-volume-mute");
+  volumeBtn.classList.remove("bxs-volume-low");
+}
+let lastVolume = videoEl.volume;
+
+//Mute and Unmute Volume 
+function changeVolumeIcon()
+{
+  let volume = videoEl.volume;
+  removeAllVolumeClass();
+  if(volume !== 0)
+  {
+    volumeBtn.classList.add("bxs-volume-mute");
+    volumeBtn.setAttribute("title","Unmute");
+    lastVolume=volume
+    volume=0;
+    videoEl.volume=volume; 
+  }
+  else
+  {
+    if(lastVolume < 0.5)
+      volumeBtn.classList.add("bxs-volume-low");
+    else
+      volumeBtn.classList.add("bxs-volume-full");
+
+    volumeBtn.setAttribute("title","Mute");
+    volume=lastVolume;
+    videoEl.volume=volume;
+  }
+  volumeBar.style.width  = `${volume*100}%`;
+}
+// Set Volume Bar width on Click.
+function updateVolumeBar(e)
+{
+  let progressVolume = (e.offsetX/volumeRange.offsetWidth);
+  if(progressVolume < 0.1)
+  {
+    progressVolume = 0;
+  }
+  if(progressVolume > 0.9)
+  {
+    progressVolume = 1.0;
+  }
+  videoEl.volume = progressVolume;
+  lastVolume=progressVolume;
+  volumeBar.style.width  = `${progressVolume*100}%`;
+
+  //Change Icon Depending on Volume.
+  removeAllVolumeClass();
+  if(progressVolume === 0)
+  {
+    volumeBtn.classList.add("bxs-volume-mute");
+  }
+  else if(progressVolume < 0.5)
+  {
+    volumeBtn.classList.add("bxs-volume-low");
+  }
+  else
+  {
+    volumeBtn.classList.add("bxs-volume-full");
+  }
+
+}
 
 
 // Change Playback Speed -------------------- //
@@ -96,4 +163,6 @@ videoEl.addEventListener("click",videoPlayPause);
 videoEl.addEventListener("ended",pauseVideo);
 videoEl.addEventListener("canplay",updateProgressBar);
 videoEl.addEventListener("timeupdate",updateProgressBar);
-progressRange.addEventListener("click",setProgress)
+progressRange.addEventListener("click",setProgress);
+volumeBtn.addEventListener("click",changeVolumeIcon);
+volumeRange.addEventListener("click",updateVolumeBar);
