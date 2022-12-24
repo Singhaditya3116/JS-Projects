@@ -15,9 +15,34 @@ body{
   align-items: center;
 }
 
+/* Navigation */
+.background{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: white;
+  z-index: -1;
+}
+
 .navigation-item{
   display: flex;
   justify-content: center;
+}
+
+.clickable{
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: dodgerblue;
+}
+
+.clickable:hover{
+  -webkit-filter: brightness(110%);
+          filter: brightness(80%);
 }
 
 .hidden{
