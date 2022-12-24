@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="https://freepngimg.com/download/space/23420-7-nasa-file.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>NASA API</title>
+</head>
+
+<body>
+
+  <!-- Loader -->
+  <div class="loader hidden">
+    <img src="./rocket.svg" alt="Rocket Svg">
+  </div>
+  <!-- Container -->
+  <div class="container">
+    <!-- Navigation -->
+    <div class="navigation-container">
+      <span class="background"></span>
+      <!-- Result Nav -->
+      <span class="navigation-item" id="resultsNav">
+        <h3 class="clickable">Favourites</h3>
+        <h3>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</h3>
+        <h3 class="clickable">Load More</h3>
+      </span>
+      <!-- Favourites Nav -->
+      <span class="navigation-item hidden" id="favouritesNav">
+        <h3 class="clickable">Load More NASA Images</h3>
+      </span>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
