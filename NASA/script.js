@@ -1,4 +1,5 @@
 const cardsContainer = document.querySelector(".cards-container");
+const addAlertToogle = document.querySelector(".alert");
 
 //NASA API
 const count=3;
@@ -6,7 +7,7 @@ const apiKey = "DEMO_KEY"
 const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${count}`;
 
 let resultsArray = [];
-let favouritesArray = [];
+let favoritesObject = {};
 
 //Get Data from NASA API.
 
@@ -16,9 +17,9 @@ async function getNasaData()
     const response = await fetch(apiUrl);
     // console.log(response);
     resultsArray = await response.json();
-
+    console.log(resultsArray);
     resultsArray.forEach((card) => {
-      console.log(card);
+      // console.log(card);
       createCard(card);
     })
   }
@@ -27,8 +28,22 @@ async function getNasaData()
   }
 }
 
-function addToFavorite(arg){
-  console.log("clicked",arg);
+function addToFavorite(itemUrl){
+  // console.log("clicked",arg);
+  resultsArray.forEach((element) => {
+      if(element.url.includes(itemUrl) && favoritesObject[itemUrl] === undefined)
+      {
+        favoritesObject[itemUrl] = element;
+        localStorage.setItem(itemUrl,JSON.stringify(element));
+        //Show Add Confirmation for 2secs.
+        addAlertToogle.hidden = false;
+        setTimeout(()=>{
+          addAlertToogle.hidden = true;
+        },1500)
+      }
+  })
+  
+  console.log(favoritesObject);
 }
 
 function createCard(card){
@@ -61,7 +76,7 @@ function createCard(card){
   cardTitle.textContent = `${title}`;
   const addFavoriteBtn = document.createElement("button");
   addFavoriteBtn.setAttribute("id","add-favorite");
-  addFavoriteBtn.setAttribute("onclick","addToFavorite(this)");
+  addFavoriteBtn.setAttribute("onclick",`addToFavorite("${url}")`);
   addFavoriteBtn.textContent="Add to Favorites";
   const details = document.createElement("div");
   details.classList.add("details");
