@@ -153,7 +153,7 @@ body{
 }
 
 #alert-title{
-  padding: 0% 10% 0% 10%;
+  padding: 12% 10% 0% 10%;
 }
 
 /* Media Query */
@@ -182,5 +182,36 @@ body{
 {
   .cards-container{
     width: 90vw;
+  }
+  .clickable{
+    font-size: 1rem;
+  }
+  
+  .card-image{
+    height: 260px;
+  }
+  .card-title{
+    font-size: 0.9rem;
+  }
+  
+  .details{
+    font-size:0.8rem;
+  }
+
+  #add-favorite{
+    font-size: 0.8rem;
+  }
+  .author-details{
+    font-size: 0.8rem;
+  }
+
+  .alert{
+    height: 70px;
+    bottom: 6%;
+  }
+  
+  #alert-title {
+    padding: 12% 10% 0% 23%;
+    font-size: 1.3rem;
   }
 }
