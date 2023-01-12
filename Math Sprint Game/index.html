@@ -21,60 +21,96 @@
       <h1>Math Sprint Game</h1>
     </div>
     <div class="main-body">
+      <!-- Question Set Container -->
+      <div class="question-set-container">
+        <!-- 10 Questions Radio Button -->
+        <div class="question-sets">
+          <input name="question-set" checked id="question-set" type="radio" value="hello">
+          <div class="question-title">
+            <h3 class="question">
+              10 Questions
+            </h3>
+          </div>
+          <div class="best-score">
+            <h3 class="best">Best Score</h3>
+            <h3 class="time">0.0 s</h3>
+          </div>
+        </div>
+        <!-- 25 Questions Radio Button -->
+        <div class="question-sets">
+          <input name="question-set" id="question-set" type="radio" value="giyan">
+          <div class="question-title">
+            <h3 class="question">
+              10 Questions
+            </h3>
+          </div>
+          <div class="best-score">
+            <h3 class="best">Best Score</h3>
+            <h3 class="time">0.0 s</h3>
+          </div>
+        </div>
+        <!-- 55 Questions Radio Button -->
+        <div class="question-sets">
+          <input name="question-set" id="question-set" type="radio" value="world">
+          <div class="question-title">
+            <h3 class="question">
+              10 Questions
+            </h3>
+          </div>
+          <div class="best-score">
+            <h3 class="best">Best Score</h3>
+            <h3 class="time">0.0 s</h3>
+          </div>
+        </div>
+        <!-- 99 Questions Radio Button -->
+        <div class="question-sets">
+          <input name="question-set" id="question-set" type="radio" value="world">
+          <div class="question-title">
+            <h3 class="question">
+              10 Questions
+            </h3>
+          </div>
+          <div class="best-score">
+            <h3 class="best">Best Score</h3>
+            <h3 class="time">0.0 s</h3>
+          </div>
+        </div>
+      </div>
 
-      <div class="question-sets">
-        <input name="question-set" type="radio" value="hello">
-        <div class="question-title">
-          <h3 class="question">
-            10 Questions
-          </h3>
-        </div>
-        <div class="best-score">
-          <h3 class="best">Best Score</h3>
-          <h3 class="time">0.0 s</h3>
-        </div>
+      <!-- Countdown Container -->
+      <div class="countdown-container hidden">
+        <h1 class="countdown">
+
+        </h1>
       </div>
-      <div class="question-sets">
-        <input name="question-set" type="radio" value="giyan">
-        <div class="question-title">
-          <h3 class="question">
-            10 Questions
-          </h3>
-        </div>
-        <div class="best-score">
-          <h3 class="best">Best Score</h3>
-          <h3 class="time">0.0 s</h3>
-        </div>
-      </div>
-      <div class="question-sets">
-        <input name="question-set" type="radio" value="world">
-        <div class="question-title">
-          <h3 class="question">
-            10 Questions
-          </h3>
-        </div>
-        <div class="best-score">
-          <h3 class="best">Best Score</h3>
-          <h3 class="time">0.0 s</h3>
-        </div>
-      </div>
-      <div class="question-sets">
-        <input name="question-set" type="radio" value="world">
-        <div class="question-title">
-          <h3 class="question">
-            10 Questions
-          </h3>
-        </div>
-        <div class="best-score">
-          <h3 class="best">Best Score</h3>
-          <h3 class="time">0.0 s</h3>
-        </div>
+
+      <!-- Quiz Page -->
+      <div class="quiz-container hidden">
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+
       </div>
 
     </div>
+
+    <!-- Start Button -->
     <div class="button">
       <button id="start-btn">Start Round</button>
     </div>
+
+    <!-- Checker Button -->
+    <div class="button checker hidden">
+      <button class="checker-btn" id="wrong-btn">Wrong</button>
+      <button class="checker-btn" id="right-btn">Right</button>
+    </div>
+
   </div>
 
   <script src="./script.js"></script>
