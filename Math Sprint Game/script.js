@@ -6,19 +6,21 @@ const countdownValue = document.querySelector(".countdown");
 
 function startCountDown()
 {
+  countdownContainer.classList.remove("hidden");
   countdownValue.textContent = 3;
   let i=3;
   let countdownInterval = setInterval(()=>{
-    i--;
-    countdownValue.textContent = i;
+    
+    countdownValue.textContent = --i;
     if(i == 0)
     {
       countdownValue.textContent = "Go!";
       clearInterval(countdownInterval);
     }
-    // console.log(i);
-    
+
   },1000)
+
+  
 }
 
 
@@ -32,7 +34,7 @@ submitBtn.addEventListener("click",()=>{
   // Hide the Question set Container
   questionContainer.hidden = true;
   buttonContainer.hidden = true;
-  countdownContainer.classList.remove("hidden");
+  
   // Start CountDown
   startCountDown();
   

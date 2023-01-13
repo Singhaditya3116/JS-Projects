@@ -22,10 +22,10 @@
     </div>
     <div class="main-body">
       <!-- Question Set Container -->
-      <div class="question-set-container">
+      <div class="question-set-container hidden">
         <!-- 10 Questions Radio Button -->
         <div class="question-sets">
-          <input name="question-set" checked id="question-set" type="radio" value="hello">
+          <input name="question-set" checked id="question-set" type="radio" value="10">
           <div class="question-title">
             <h3 class="question">
               10 Questions
@@ -38,10 +38,10 @@
         </div>
         <!-- 25 Questions Radio Button -->
         <div class="question-sets">
-          <input name="question-set" id="question-set" type="radio" value="giyan">
+          <input name="question-set" id="question-set" type="radio" value="25">
           <div class="question-title">
             <h3 class="question">
-              10 Questions
+              25 Questions
             </h3>
           </div>
           <div class="best-score">
@@ -51,10 +51,10 @@
         </div>
         <!-- 55 Questions Radio Button -->
         <div class="question-sets">
-          <input name="question-set" id="question-set" type="radio" value="world">
+          <input name="question-set" id="question-set" type="radio" value="55">
           <div class="question-title">
             <h3 class="question">
-              10 Questions
+              55 Questions
             </h3>
           </div>
           <div class="best-score">
@@ -64,10 +64,10 @@
         </div>
         <!-- 99 Questions Radio Button -->
         <div class="question-sets">
-          <input name="question-set" id="question-set" type="radio" value="world">
+          <input name="question-set" id="question-set" type="radio" value="99">
           <div class="question-title">
             <h3 class="question">
-              10 Questions
+              99 Questions
             </h3>
           </div>
           <div class="best-score">
@@ -85,7 +85,19 @@
       </div>
 
       <!-- Quiz Page -->
-      <div class="quiz-container hidden">
+      <div class="quiz-container ">
+        <div class="selected-item">
+
+        </div>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 6 = 40</h3>
+        <h3>3 * 7 = 40</h3>
+        <h3>3 * 8 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
+        <h3>3 * 5 = 40</h3>
         <h3>3 * 5 = 40</h3>
         <h3>3 * 5 = 40</h3>
         <h3>3 * 5 = 40</h3>
@@ -101,12 +113,12 @@
     </div>
 
     <!-- Start Button -->
-    <div class="button">
+    <div class="button hidden">
       <button id="start-btn">Start Round</button>
     </div>
 
     <!-- Checker Button -->
-    <div class="button checker hidden">
+    <div class="button checker ">
       <button class="checker-btn" id="wrong-btn">Wrong</button>
       <button class="checker-btn" id="right-btn">Right</button>
     </div>
