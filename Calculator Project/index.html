@@ -10,10 +10,11 @@
 
 <body>
 
-  <div>
+  <div class="calculator">
     <table>
       <caption>Calculator</caption>
       <thead>
+        <!-- Display -->
         <tr>
           <td colspan="4">
             <h3 id="screen"></h3>
@@ -25,7 +26,7 @@
           <td id="clear">AC</td>
           <td class="same-color">N</td>
           <td class="same-color operators">%</td>
-          <td class="same-color operators">/</td>
+          <td class="same-color operators" colspan="2">/</td>
         </tr>
         <tr>
           <td class="numbers">7</td>
@@ -48,8 +49,8 @@
         <tr>
           <td class="numbers">0</td>
           <td class="numbers">.</td>
-          <td id="delete"><img src="./delete.png"></td>
-          <td id="equal-to">=</td>
+          <td id="delete"><img src="./delete.png"></td> <!--Delete button-->
+          <td id="equal-to">=</td> <!--Equal button-->
         </tr>
       </tbody>
     </table>

@@ -32,24 +32,16 @@ function evaluate()
 
 function deleteBtnClicked(e)
 {
-  // console.log("delete clicked");
   e.stopPropagation();
   let currScreen = displayScreen.innerText;
-  if(currScreen === "")
-  {
+  if(currScreen.length === 1 || currScreen === ""){
+    displayScreen.innerText="";
     return;
   }
-  console.log("original ",displayScreen.innerText,"length ",displayScreen.innerText.length);
-  if(currScreen.length === 1)
-  {
-    displayScreen.innerText="";
-  }
-  else
-  {
+  else{
     displayScreen.innerText = currScreen.substring(0,currScreen.length-1);
   }
-  
-  console.log("sliced ",displayScreen.innerText,"length ",displayScreen.innerText.length);
+
 }
 
 function operatorButtonClicked(operator)
@@ -60,7 +52,7 @@ function operatorButtonClicked(operator)
     return;
   }
   displayScreen.innerText += operator;
-  console.log(currScreen,typeof currScreen);
+  // console.log(currScreen,typeof currScreen);
   // console.log(operator,typeof operator);
   // operator = this.innerText;
   // operand1 = displayScreen.innerText;
@@ -77,7 +69,7 @@ function operandClicked(operand)
 
 function checkBtnClicked(e)
 {
-  console.log(e.target, e.currentTarget)
+  // console.log(e.target, e.currentTarget)
   if(e.target.tagName === "TR" || e.target.tagName === "IMG")
   {
     return;
