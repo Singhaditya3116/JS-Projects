@@ -5,10 +5,15 @@ const operators = document.getElementsByClassName("operators");
 const equalToBtn = document.getElementById("equal-to");
 const deleteBtn = document.getElementById("delete");
 const tableBody = document.querySelector("tbody");
-const operatorArray = ["%","/","+","-","x"];
-var operand1 = 0;
-var operand2 = 0;
-var operator = null;
+const operatorArray = ["%","÷","+","−","×"];
+const operatorMap = {
+  "%":"%",
+  "÷":"/",
+  "+":"+",
+  "−":"-",
+  "×":"*"
+}
+
 
 //Clear the Input Screen
 function clearScreen(){
@@ -19,15 +24,31 @@ function clearScreen(){
 //Get the value from Screen
 function currentScreenValue()
 {
-  // console.log(this);
+  
   displayScreen.innerText = displayScreen.innerText+" "+ this.innerText;
   return;
 }
 
 //Evaluate the statement on the screen when = is clicked.
-function evaluate()
+function evaluate(e)
 {
-  console.log(displayScreen.innerText)
+  e.stopPropagation();
+  let tempstatement = displayScreen.innerText;
+  let statement="";
+
+  for(let i=0;i<tempstatement.length;i++)
+  {
+    if(operatorArray.includes(tempstatement[i]))
+      statement += operatorMap[tempstatement[i]];
+    else
+      statement += tempstatement[i];
+  }
+  console.log(eval(statement));
+  let ans = eval(statement);
+  if(ans % 1 !== 0){
+    ans = ans.toFixed(2);
+  } 
+  displayScreen.innerText = ans;
 }
 
 function deleteBtnClicked(e)
@@ -52,24 +73,15 @@ function operatorButtonClicked(operator)
     return;
   }
   displayScreen.innerText += operator;
-  // console.log(currScreen,typeof currScreen);
-  // console.log(operator,typeof operator);
-  // operator = this.innerText;
-  // operand1 = displayScreen.innerText;
-  // displayScreen.innerText =displayScreen.innerText + " "+ operator;
 }
 
 function operandClicked(operand)
 {
-  // console.log(operand,typeof operand);
   displayScreen.innerText += operand;
 }
 
-
-
 function checkBtnClicked(e)
 {
-  // console.log(e.target, e.currentTarget)
   if(e.target.tagName === "TR" || e.target.tagName === "IMG")
   {
     return;
@@ -77,12 +89,11 @@ function checkBtnClicked(e)
   let tempOperator = e.target.innerText;
   let value = Number(tempOperator);
   
-  if(value >= 0 && value <= 10)
+  if(value >= 0 && value < 10)
   {
-    //console.log(e.target,e.target.tagName);
     operandClicked(value);
   }
-  else if(tempOperator == "%" || tempOperator == "/" || tempOperator == "-" || tempOperator == "+" || tempOperator == "x")
+  else if(operatorArray.includes(tempOperator))
   {
     operatorButtonClicked(tempOperator);
   }

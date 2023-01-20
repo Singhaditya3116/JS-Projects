@@ -50,20 +50,15 @@ thead td {
 }
 
 thead h3 {
-  /* height: 30px; */
-  /* width: 100%; */
-  font-size: 30px;
+
+  font-size: 40px;
   overflow-y: hidden;
   overflow-x: auto;
-  /* text-align: end; */
   margin: 0px 5px;
   letter-spacing: 2px;
-  color: rgb(18, 255, 18);
+  color: white;
 }
 
-/* h3::-webkit-scrollbar {
-  display: none;
-} */
 
 tbody tr{
   display: flex;
@@ -89,12 +84,9 @@ tbody td {
 tbody td:hover{
   -webkit-filter: brightness(120%);
           filter: brightness(120%);
-  /* transform: scale(1.06); */
 }
 
-
 tbody td:active{
-  /* background-color: yellow; */
   transform: scale(0.95);
 }
 
@@ -138,33 +130,4 @@ img {
   border-radius: 10px;
 }
 
-
-/* Media Query
-@media screen and (max-width:1300px)
-{
-  table {
-    width: 35vw;
-  }
-}
-
-@media screen and (max-width:950px)
-{
-  table {
-    width: 45vw;
-  }
-}
-
-@media screen and (max-width:650px)
-{
-  table {
-    width: 65vw;
-  }
-}
-
-@media screen and (max-width:450px)
-{
-  table {
-    width: 85vw;
-  }
-} */
 
