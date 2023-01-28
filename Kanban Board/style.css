@@ -1,7 +1,7 @@
 *{
   margin: 0px;
   padding: 0px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 html{
@@ -10,11 +10,9 @@ html{
 
 body{
   margin:0;
-  /* background-color: whitesmoke; */
   width: 100vw;
   background-color: #e7e3ed;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%230d0c0c' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-  
 }
 
 .container{
@@ -33,7 +31,6 @@ body{
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-
 }
 
 .board-container > div {
@@ -91,7 +88,7 @@ ul + button {
   text-align: start;
   font-weight: bold;
   font-size: 1.1rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: rgba(255,255,255,0.7);
   border: 0px;
   border-radius: 5px;
