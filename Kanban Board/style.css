@@ -1,0 +1,116 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+html{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  /* background-color: whitesmoke; */
+  width: 100vw;
+  background-color: #e7e3ed;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%230d0c0c' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  
+}
+
+.container{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.board-container{
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+}
+
+.board-container > div {
+  margin: 10px;
+  padding: 10px 10px 50px 10px;
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  color: white;
+  position: relative;
+}
+
+.header{
+  font-size: 1.3rem;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.backlog .header{
+  background-color: #d33131;
+}
+
+.in-progress .header{
+  background-color: #39cd39;
+}
+
+.complete .header{
+  background-color: chocolate;
+}
+
+.onhold .header{
+  background-color: #cfcf35;
+}
+
+ul li{
+  background-color: gray;
+  border-radius: 5px;
+  padding: 10px;
+  margin:10px 0px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+ul + button {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 10px;
+  text-align: start;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: 'Lato', sans-serif;
+  background-color: rgba(255,255,255,0.7);
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ul + button:hover{
+  -webkit-filter: brightness(80%);
+          filter: brightness(90%);
+}
+
+ul + button:active{
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+}
+
+.bx-plus{
+  font-size: 1.4rem;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-right: 2px;
+}

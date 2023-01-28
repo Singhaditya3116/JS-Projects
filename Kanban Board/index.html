@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Kanban Board</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Kanban Board</h1>
+    <!-- Kanban Board Container -->
+    <div class="board-container">
+      <!-- Backlog Container -->
+      <div class="backlog">
+        <span class="header">Backlog</span>
+        <ul>
+          <li>Sit back and Relax</li>
+        </ul>
+        <button><i class='bx bx-plus'></i>Add Item</button>
+      </div>
+      <!-- In progress Container -->
+      <div class="in-progress">
+        <span class="header">In Progress</span>
+        <ul>
+          <li>Cool</li>
+          <li>Work on Projects</li>
+          <li>Work on Projects</li>
+          <li>Work on Projects</li>
+        </ul>
+        <button><i class='bx bx-plus'></i>Add Item</button>
+      </div>
+      <!-- Complete Container -->
+      <div class="complete">
+        <span class="header">Complete</span>
+        <ul>
+          <li>Getting stuff done</li>
+        </ul>
+        <button><i class='bx bx-plus'></i>Add Item</button>
+      </div>
+      <!-- Onhold Container -->
+      <div class="onhold">
+        <span class="header">On Hold</span>
+        <ul>
+          <li>Listen to music</li>
+        </ul>
+        <button><i class='bx bx-plus'></i>Add Item</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
