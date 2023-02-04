@@ -66,7 +66,9 @@ function hideInputBox(containerNumber){
 
   //appending data in container.
   let inputValue = contentAreas[containerNumber].innerText;
-  taskArrays[containerArrayMaps[containerNumber]].push(inputValue);
+  if(inputValue != "")
+    taskArrays[containerArrayMaps[containerNumber]].push(inputValue);
+    contentAreas[containerNumber].innerText="";
   updateDOM();
   updateLocalStorage();
 }
@@ -82,6 +84,7 @@ function updateDOM(){
       listItem.innerText = `${taskItem}`;
       listItem.draggable = true;
       listItem.setAttribute("ondragstart","drag(event)");
+      listItem.setAttribute("contentEditable","true");
       list[index].appendChild(listItem);
     })
   })
