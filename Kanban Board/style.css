@@ -11,6 +11,7 @@ html{
 body{
   margin:0;
   width: 100vw;
+  overflow-x: hidden;
   background-color: #e7e3ed;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%230d0c0c' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
@@ -27,13 +28,18 @@ body{
   width: 100%;
   margin-top: 40px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  
 }
 
 .board-container > div {
+  min-width: 250px;
+  max-width: 380px;
   margin: 10px;
   padding: 10px 6px 10px 10px;
   flex: 1;
@@ -54,6 +60,7 @@ body{
   padding: 10px;
   margin-bottom: 20px;
   box-sizing: border-box;
+  text-shadow: 2px 2px 5px black;
   text-align: center;
 }
 
@@ -74,7 +81,7 @@ body{
 }
 
 ul{
-  max-height: 400px;
+  max-height: 300px;
   min-height: 50px;
   overflow-y: auto;
 }
@@ -108,7 +115,6 @@ ul::-webkit-scrollbar {
 /* Track */
 ul::-webkit-scrollbar-track {
   background-color:  rgb(231,227,237); 
-  /* background-color: transparent; */
   border-radius: 10px;
 }
  
@@ -201,4 +207,15 @@ li:focus{
   font-weight: bold;
   vertical-align: middle;
   margin-right: 2px;
+}
+
+li.hidden{
+  display: none;
+}
+
+/* Media Query */
+@media screen and (max-width:572px){
+  .board-container{
+    margin-top: 20px;
+  }
 }

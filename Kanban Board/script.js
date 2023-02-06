@@ -79,20 +79,52 @@ function updateDOM(){
 
   taskArrayKeys.forEach((task,index)=>{
     list[index].innerText="";
-    taskArrays[task].forEach((taskItem)=>{
+    taskArrays[task].forEach((taskItem,innerIndex)=>{
       let listItem = document.createElement("li");
       listItem.innerText = `${taskItem}`;
       listItem.draggable = true;
       listItem.setAttribute("ondragstart","drag(event)");
-      listItem.setAttribute("contentEditable","true");
+      listItem.contentEditable=true;
+      listItem.setAttribute("onfocusout",`updateArrayItem(${index},${innerIndex})`);
       list[index].appendChild(listItem);
     })
   })
   
 }
 
+//Remove Null items from taskarrays
+function filterArray(){
+  let taskArrayKeys = Object.keys(taskArrays);
+  taskArrayKeys.forEach((containerArray)=>{
+    //console.log(containerArray);
+    taskArrays[containerArray]=taskArrays[containerArray].filter(item =>item);
+  })
+  updateDOM();
+}
+
+//Update Item if changes happen in Items.
+function updateArrayItem(containerIndex,index)
+{
+  let itemValue = list[containerIndex].children[index].innerText;
+  if(itemValue === ""){
+    // If itemValue is empty remove it from DOM and array.
+    list[containerIndex].children[index].classList.add("hidden");
+    taskArrays[containerArrayMaps[containerIndex]][index] = null;
+  }
+  else{
+    taskArrays[containerArrayMaps[containerIndex]][index] = itemValue;
+  }
+  filterArray();
+  updateLocalStorage();
+}
+
 //Update task Array after drag and Drop is complete.
 function updateArray(previousContainer,currentContainer,itemText){
+  //If drag and drop in same container
+  if(previousContainer === currentContainer)
+  {
+    return;
+  }
   //Deleting Item from previous container Array.
   let mapIndex = list.indexOf(previousContainer);
   let index = taskArrays[containerArrayMaps[mapIndex]].indexOf(itemText);
@@ -106,7 +138,6 @@ function updateArray(previousContainer,currentContainer,itemText){
 //When Item starts dragging
 function drag(e){
   draggedItem = e.target;
-  // console.log("dragged Item : ",draggedItem);
 }
 
 //Allow Item to Drop
@@ -124,8 +155,6 @@ function dragEnter(container){
 function drop(e){
   e.preventDefault();
   const previousContainer = draggedItem.parentElement;
-  // console.log("Previous Container : ",draggedItem.parentElement);
-  // console.log("DROP IN this Container :",currentContainer);
   currentContainer.appendChild(draggedItem);
   list.forEach((container)=>{
     container.classList.remove("over");
@@ -133,7 +162,6 @@ function drop(e){
 
   updateArray(previousContainer,currentContainer,draggedItem.innerText);
   updateLocalStorage();
-  console.log(taskArrays);
 }
 
 //On load
