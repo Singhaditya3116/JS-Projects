@@ -16,6 +16,10 @@ html{
   height: 50px;
   display: flex;
   justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
 }
 
 .active-tool{
@@ -33,10 +37,7 @@ html{
   color: white;
   border-radius: 5px;
   padding: 5px 10px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  text-shadow: 2px 2px 10px black;
 }
 
 
@@ -63,6 +64,7 @@ html{
   height: 23px;
   text-align: center;
   cursor: pointer;
+  color: white;
 }
 
 .jscolor{
@@ -81,6 +83,10 @@ html{
   font-size: 20px;
   font-weight: bold;
   padding: 1px 6px 4px 6px;
+  display: inline-block;
+  width: 23px;
+  text-align: center;
+  color: white;
 }
 
 
@@ -97,6 +103,8 @@ html{
   padding: 5px;
   cursor: pointer;
   color: white;
+  width: 35px;
+  text-align: center;
 }
 
 #download{
@@ -121,6 +129,15 @@ html{
 
 .mobile-message{
   display: none;
+}
+
+/* Styling Canvas */
+
+#canvas{
+  /* background-color: black; */
+  position: absolute;
+  top:50px;
+  cursor: crosshair;
 }
 
 /* Slider styling */
