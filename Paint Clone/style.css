@@ -127,6 +127,18 @@ html{
   color: red;
 }
 
+#clear-storage:hover{
+  color: #d83d3d;
+}
+
+#save-storage:hover{
+  color: #6e6eef;
+}
+
+#load-storage:hover{
+  color: #4dcd4d;
+}
+
 .mobile-message{
   display: none;
 }
@@ -175,7 +187,7 @@ html{
 }
 
 /* Media Query */
-@media screen and (max-width:900px){
+@media screen and (max-width:800px){
   .mobile-message{
     display: block;
     width: 100vw;
