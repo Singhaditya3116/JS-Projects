@@ -6,6 +6,10 @@ const brushSlider = document.querySelector("#brush-slider");
 const bucketColorBtn = document.querySelector("#bucket-color");
 const eraser = document.querySelector("#eraser");
 const clearCanvasBtn = document.querySelector("#clear-canvas");
+const saveStorageBtn = document.querySelector("#save-storage");
+const loadStorageBtn = document.querySelector("#load-storage");
+const clearStorageBtn = document.querySelector("#clear-storage");
+const downloadBtn = document.querySelector("#download");
 const {body} = document;
 
 //Global Variables
@@ -37,7 +41,6 @@ function displayBrushSize(){
 brushColorBtn.addEventListener("change",()=>{
   isBrush=true;
   brushColor = `#${brushColorBtn.value}`;
-  // console.log(brushColor);
 })
 
 
@@ -105,7 +108,6 @@ clearCanvasBtn.addEventListener("click",() => {
 
 //Draw What is stored in draw array
 function restoreCanvas(){
-
   for(let i = 1; i<drawnArray.length; i++){
     context.beginPath();
     context.moveTo(drawnArray[i - 1].x,drawnArray[i - 1].y)
@@ -134,7 +136,6 @@ function storeDrawn(x,y,size,color,brush){
 canvas.addEventListener("mousedown",(event) => {
   isMouseDown= true;
   const currentPosition = getMousePosition(event);
-  // console.log("mouse is clicked ",currentPosition);
   context.moveTo(currentPosition.x,currentPosition.y);
   context.beginPath();
   context.lineWidth = currentSize;
@@ -158,11 +159,53 @@ canvas.addEventListener("mousemove",() => {
 
 //Mouse Up
 canvas.addEventListener("mouseup",() => {
-  isMouseDown = false;
-  // console.log("Mouse is unclicked");
+  isMouseDown = false
 })
 
-// body.setAttribute("onclick","getMousePosition(event)");
+// Save to LocalStorage
+saveStorageBtn.addEventListener("click",() => {
+  localStorage.setItem("savedCanvas",JSON.stringify(drawnArray));
+
+  //setting active tool text
+  activeToolText.innerText = "Canvas Saved";
+  setTimeout(switchToBrush,1500);
+})
+
+//load from localStorage
+loadStorageBtn.addEventListener("click",() => {
+  if(localStorage.getItem("savedCanvas")){
+    drawnArray = JSON.parse(localStorage.getItem("savedCanvas"));
+    restoreCanvas();
+
+    //setting active tool text
+    activeToolText.innerText = "Canvas Loaded";
+    setTimeout(switchToBrush,1500);
+  }
+  else{
+    activeToolText.innerText = "No Canvas Found";
+    setTimeout(switchToBrush,1500);
+  }
+})
+
+//clear localStorage
+clearStorageBtn.addEventListener("click",() => {
+  if(localStorage.getItem("savedCanvas")){
+    localStorage.removeItem("savedCanvas");
+
+    //setting active tool text
+    activeToolText.innerText = "Local Storage Cleared";
+    setTimeout(switchToBrush,1500);
+  }
+})
+
+//Download Image
+downloadBtn.addEventListener("click",() => {
+  downloadBtn.href = canvas.toDataURL("image/jpeg",1);
+  downloadBtn.download = "paint-example.jpeg";
+  //setting active tool text
+  activeToolText.innerText = "Image File Saved";
+  setTimeout(switchToBrush,1500);
+})
 
 
 createCanvas();
